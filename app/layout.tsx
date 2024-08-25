@@ -1,14 +1,10 @@
-import {
-  ClerkProvider,
-  SignIn,
-  SignedIn,
-  SignedOut
-} from '@clerk/nextjs';
+/* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Image from 'next/image';
-import Header from '@/components/Header';
+import { ClerkProvider, SignedIn, SignedOut, SignIn, SignUpButton } from "@clerk/nextjs";
+import Header from "@/components/Header";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,16 +22,21 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <SignedOut>
-            <div className='flex items-center flex-col justify-center h-screen'>
+            <div className='flex items-center flex-col relative justify-center h-screen'>
+              <div className="text-[14px] text-gray-900/50 absolute top-2 right-2">
+                Don't have an account? <SignUpButton />
+              </div>
               <div className='flex items-center flex-col gap-y-10 mb-10'>
-                <Image src="/assets/logo.png" width={44} height={40} alt='logo' />
+                <svg width="44" height="40" viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M18.4405 16.7509C20.429 19.5731 22.455 21.0644 24.7116 23.0766C19.5071 23.2213 16.1518 22.0677 14.6348 19.6104C14.5759 19.5086 14.517 19.4013 14.4578 19.294C13.8038 18.0063 13.6647 16.4826 15.128 15.5598C16.9019 14.4383 17.2881 15.1196 18.4405 16.7509ZM11.2955 11.5304C10.9685 11.5464 10.6953 11.2941 10.6792 10.9669C10.6629 10.6396 10.9149 10.3661 11.2418 10.35C11.5688 10.334 11.8421 10.586 11.8584 10.9132C11.8745 11.2408 11.6225 11.5143 11.2955 11.5304ZM21.367 7.00197C19.5552 3.24618 15.7175 0.654724 11.2687 0.654724C8.18663 0.654724 5.38867 1.9051 3.36275 3.92781C1.33129 5.95577 0.0715866 8.76189 0.0715866 11.8684C0.0715866 14.9694 1.33129 17.7808 3.36275 19.8091C5.38867 21.8318 8.18138 23.0818 11.2687 23.0818C12.153 23.0818 13.0108 22.9801 13.8307 22.7867C11.6172 22.0625 9.34454 20.5601 8.63142 18.3227C8.18138 16.9116 8.21871 15.1036 8.73875 12.8931C9.06046 11.5356 8.71746 10.7793 7.31834 10.2319C8.50834 9.72235 8.91025 9.80285 9.46238 9.81889C10.3628 8.57406 12.3353 8.38622 13.686 9.09993C14.8171 9.69552 15.0743 10.8006 15.5083 11.9005C16.1891 13.612 16.9716 15.2754 18.9121 13.7786C21.3347 11.9166 22.8677 10.1193 21.367 7.00197Z" fill="#1A1A1A" />
+                </svg>
                 <h1 className='text-[24px] font-semibold'>Welcome back</h1>
               </div>
               <SignIn routing='hash' />
             </div>
           </SignedOut>
           <SignedIn>
-            <Header />
+            <Header/>
             {children}
           </SignedIn>
         </body>

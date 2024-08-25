@@ -1,35 +1,35 @@
-import Image from 'next/image';
+import { ArrowUp10, ChevronRight, CircleArrowLeft, Plus, Search } from 'lucide-react';
 import * as React from 'react';
+import { Button } from './ui/button';
 
-interface BulkVerifierProps {
+interface BulkVerifyProps {
 }
 
-const BulkVerifier: React.FunctionComponent<BulkVerifierProps> = (props) => {
+const BulkVerify: React.FunctionComponent<BulkVerifyProps> = (props) => {
     return (
-
-        <section className='w-[968px] bg-white p-10 rounded border mt-[38px]'>
+    <section className='min-h-screen min-w-screen bg-gray-50 pt-[34px]'>
+        <section className='lg:w-[968px] bg-white mx-auto p-10 rounded lg:border '>
             <div className='flex justify-between mb-[25px]'>
-                <div className='flex gap-x-4 text-black'>
+                <div className='flex gap-x-4  text-black'>
                     <div>
-                        <Image src="/assets/Go-Back.svg" width={32} height={32} alt="dropdown arrow" />
-                    </div>
-                    <h1 className='text-[20px]'>Bulk Email Verifier </h1>
+                        <CircleArrowLeft className="w-[28px] h-[28px] text-gray-500/50 cursor-pointer" />                    </div>
+                    <h1 className='text-[14px] lg:text-[20px]'>Bulk Email Verifier </h1>
                 </div>
                 <div>
-                    <button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
-                        + New Bulk
-                    </button>
+                    <Button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                        <Plus className='w-4 h-4' /> New Bulk
+                    </Button>
                 </div>
             </div>
-            <div className='flex justify-between'>
+            <div className='flex justify-between flex-col items-start gap-y-5 lg:flex-row mb-[25px]'>
 
-                <div className='border w-[116px]  justify-between text-center h-[30px] text-[12px] flex rounded mb-[25px]'>
-                    <button className='p-2 bg-white mx-auto '>All</button>
-                    <button className='p-2 bg-gray-500/20 '>Archived</button>
+                <div className='border  justify-between text-center  text-[12px] flex  '>
+                    <Button variant="ghost" className='bg-white'  >All</Button>
+                    <Button variant="ghost" className='bg-gray-500/10 rounded-none'>Archived</Button>
                 </div>
-                <div className='w-[232px] border text-[13px] flex h-[36px] rounded'>
-                    <input type="text" placeholder='Search a bulk task…' className='w-[196px] flex-1 px-2 border-none outline-none'/>
-                    <Image src="/assets/Search.svg" width={24} height={24} alt="dropdown arrow" />
+                <div className='w-[232px] border text-[13px] flex items-center h-[36px] rounded'>
+                    <input type="text" placeholder='Search a bulk task…' className='w-[196px] flex-1 px-2 border-none outline-none' />
+                    <Search className='w-7 h-7 text-gray-500/50 pr-2 cursor-pointer' />
                 </div>
             </div>
             <div className="flex flex-col">
@@ -41,7 +41,7 @@ const BulkVerifier: React.FunctionComponent<BulkVerifierProps> = (props) => {
                                     <tr className="bg-gray-50 min-w-full border-b-2">
                                         <th scope="col" className="p-5 text-left whitespace-nowrap text-sm leading-6 font-semibold text-gray-500/70 capitalize"> Bulk </th>
                                         <th scope="col" className="p-5 text-left whitespace-nowrap text-sm leading-6 font-semibold text-gray-500/70 capitalize"> Status </th>
-                                        <th scope="col" className="p-5 text-left whitespace-nowrap text-sm leading-6 font-semibold text-gray-900 capitalize flex gap-x-3">Created  <Image src="/assets/Arrow-Down.svg" width={10} height={10} alt="dropdown arrow" /> </th>
+                                        <th scope="col" className="p-5 text-left whitespace-nowrap text-sm leading-6 font-semibold text-gray-900 capitalize flex gap-x-2 items-center">Created  <ArrowUp10 className='w-4 h-4 cursor-pointer' /></th>
                                         <th scope="col" className="p-5 text-left whitespace-nowrap text-sm leading-6 font-semibold text-gray-900 capitalize">  </th>
                                     </tr>
                                 </thead>
@@ -59,9 +59,9 @@ const BulkVerifier: React.FunctionComponent<BulkVerifierProps> = (props) => {
                                             </div>
                                         </td>
                                         <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900"> Jun. 24, 2023 </td>
-                                        <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">
+                                        <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900/50 ">
 
-                                            <Image src="/assets/Arrow.svg" width={17} height={18} alt="dropdown arrow" className='-rotate-90' />
+                                            <ChevronRight className='w-5 h-5' />
 
                                         </td>
                                     </tr>
@@ -78,8 +78,8 @@ const BulkVerifier: React.FunctionComponent<BulkVerifierProps> = (props) => {
                                             </div>
                                         </td>
                                         <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900"> Feb. 23, 2023 </td>
-                                        <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">
-                                            <Image src="/assets/Arrow.svg" width={17} height={18} alt="dropdown arrow" className='-rotate-90' />
+                                        <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900/50 ">
+                                            <ChevronRight className='w-5 h-5' />
                                         </td>
                                     </tr>
                                     <tr className="bg-white transition-all duration-500 hover:bg-gray-50">
@@ -95,8 +95,8 @@ const BulkVerifier: React.FunctionComponent<BulkVerifierProps> = (props) => {
                                             </div>
                                         </td>
                                         <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900"> Oct. 23, 2023 </td>
-                                        <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">
-                                            <Image src="/assets/Arrow.svg" width={17} height={18} alt="dropdown arrow" className='-rotate-90' />
+                                        <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900/50 ">
+                                            <ChevronRight className='w-5 h-5' />
                                         </td>
                                     </tr>
                                     <tr className="bg-white transition-all duration-500 hover:bg-gray-50">
@@ -112,8 +112,8 @@ const BulkVerifier: React.FunctionComponent<BulkVerifierProps> = (props) => {
                                             </div>
                                         </td>
                                         <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900"> Jul. 12, 2023 </td>
-                                        <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900 ">
-                                            <Image src="/assets/Arrow.svg" width={17} height={18} alt="dropdown arrow" className='-rotate-90' />
+                                        <td className="p-5 whitespace-nowrap text-sm leading-6 font-medium text-gray-900/50 ">
+                                            <ChevronRight className='w-5 h-5' />
                                         </td>
 
                                     </tr>
@@ -126,7 +126,8 @@ const BulkVerifier: React.FunctionComponent<BulkVerifierProps> = (props) => {
                 </div>
             </div>
         </section>
+    </section>
     )
 };
 
-export default BulkVerifier;
+export default BulkVerify;
