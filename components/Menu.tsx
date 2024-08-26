@@ -23,23 +23,25 @@ const Menu = () => {
                 <MenubarTrigger className="no-border cursor-pointer ">
                     <ChevronDown className=" h-4 w-4 cursor-pointer" /></MenubarTrigger>
                 <MenubarContent className="m-2 p-4">
-                    <Link href="/account" className="cursor-pointer">
-                        <MenubarItem>
-                            Account
-                        </MenubarItem>
-                    </Link>
                     <MenubarItem>
-                        Team
+                        <Link href="/account" className="cursor-pointer">
+                            Account
+                        </Link>
                     </MenubarItem>
-                    <MenubarItem>Subscription</MenubarItem>
+
+                    <MenubarItem>
+                        <Link href="/subscription" className="cursor-pointer">
+                            Subscription
+                        </Link>
+                    </MenubarItem>
 
 
                     <MenubarSeparator />
-                    <Link href="/usage" className="cursor-pointer">
-                        <MenubarItem>
+                    <MenubarItem>
+                        <Link href="/usage" className="cursor-pointer flex items-center justify-between w-full">
                             Usage <MenubarShortcut><ArrowRight className=" h-4 w-4" /></MenubarShortcut>
-                        </MenubarItem>
-                    </Link>
+                        </Link>
+                    </MenubarItem>
 
                     <MenubarItem>
                         Verifications <MenubarShortcut>6 / 25</MenubarShortcut>
@@ -50,7 +52,9 @@ const Menu = () => {
                     <Button className="bg-blue-500 w-[180px] my-2 hover:bg-blue-700"><CircleArrowUp className=" h-4 w-4 mr-2" /> Upgrade</Button>
                     <MenubarSeparator />
                     <MenubarItem>
-                        Home <MenubarShortcut><ArrowUpRight className=" h-4 w-4" /></MenubarShortcut>
+                        <Link href="/" className="cursor-pointer flex items-center justify-between w-full">
+                            Home <MenubarShortcut><ArrowUpRight className=" h-4 w-4" /></MenubarShortcut>
+                        </Link>
                     </MenubarItem>
                     <MenubarItem>
                         <SignOutButton />

@@ -65,7 +65,7 @@ export default function AccountDetails() {
 
 function CookiesManagement() {
   return (
-    <Card>
+    <Card className="w-full lg:w-[968px] mx-auto">
       <CardHeader>
         <CardTitle>Cookies Management</CardTitle>
         <CardDescription>Manage how we use cookies to improve your experience.</CardDescription>
@@ -95,7 +95,7 @@ function CookiesManagement() {
 
 function NotificationSettings() {
   return (
-    <Card>
+    <Card className="w-full lg:w-[968px] mx-auto">
       <CardHeader>
         <CardTitle>Notification Settings</CardTitle>
         <CardDescription>Manage how you receive notifications.</CardDescription>
@@ -123,7 +123,7 @@ function NotificationSettings() {
 
 function PasswordChange() {
   return (
-    <Card>
+    <Card className="w-full lg:w-[968px] mx-auto">
       <CardHeader>
         <CardTitle>Change Password</CardTitle>
         <CardDescription>Ensure your account is using a strong, secure password.</CardDescription>
@@ -151,7 +151,7 @@ function PasswordChange() {
 
 function LegalCompliance() {
   return (
-    <Card>
+    <Card className="w-full lg:w-[968px] mx-auto">
       <CardHeader>
         <CardTitle>Legal & Compliance</CardTitle>
         <CardDescription>Review and manage your legal agreements and compliance settings.</CardDescription>
@@ -178,7 +178,7 @@ function LegalCompliance() {
 
 function DeleteAccount() {
   return (
-    <Card>
+    <Card className="w-full lg:w-[968px] mx-auto">
       <CardHeader>
         <CardTitle>Delete Account</CardTitle>
         <CardDescription>Permanently delete your account and all associated data.</CardDescription>

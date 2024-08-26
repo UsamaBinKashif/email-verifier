@@ -1,17 +1,13 @@
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "./ui/button";
-import { Label } from "recharts";
-import { Input } from "postcss";
 
 const AccountInfo = async () => {
     const user = await currentUser();
-    console.log(user)
     return (
-        <Card>
+        <Card className="w-full lg:w-[968px] mx-auto">
             <CardHeader>
                 <CardTitle>Account Information</CardTitle>
                 <CardDescription>Manage your account details and preferences.</CardDescription>
